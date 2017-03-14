@@ -49,16 +49,17 @@
 			var loginBtn = document.createElement('button');
 			loginBtn.appendChild(document.createTextNode('您未登录，点击前往登录？'));
 			loginBtn.setAttribute('type', 'button');
-			div.appendChild(loginBtn);
+			
 			loginBtn.onclick = function() {
 				userObj.loginstate = false;
 				saveUserInfo(userObj);
+				
 				window.location.href = "../html/login.html"
 			}
-
-
+			div.appendChild(loginBtn);
 		}
 	}else {
+	
 		var btn = document.createElement('button');
 		btn.appendChild(document.createTextNode('您未登录，点击前往登录？'));
 		btn.setAttribute('type', 'button');

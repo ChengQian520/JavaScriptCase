@@ -1,0 +1,21 @@
+
+@charset 'utf-8';
+
+
+body, ul, li, div {margin: 0; padding: 0;}
+ul li {list-style: none; float: left;}
+
+.wrap {width: 520px; height: 280px; margin: 100px auto; position: relative; overflow: hidden; }
+
+.imglist {width: calc(8 * 520px); height: 280px; position: relative; left: -520px;}
+.imglist li {width: 520px; height: 280px;}
+
+.idotlist {width: 130px; height: 20px; position: absolute; left: calc(50% - 65px); bottom: 10px;}
+.idotlist li {width: 9px; height: 9px; border-radius: 50%; background-color: orange; margin-right: 5px; cursor: pointer;}
+.idotlist .active {background-color: purple;}
+
+.btn {width: 45px; height: 35px; position: absolute; top: calc(50% - 22.5px); cursor: pointer; display: none;}
+.prev {left: 10px; background: url("../images/left.png") no-repeat center;}
+.next {right: 10px; background: url("../images/right.png") no-repeat center;}
+
+.wrap:hover .btn {display: block;}
