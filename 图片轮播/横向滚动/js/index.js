@@ -46,11 +46,8 @@ oNext.onclick = function() {
 
 for (var i = 0; i < aIdots.length; i++) {
 	aIdots[i].onclick = function() {
-		if (isAnimating) {
+		if (isAnimating || this.className == 'active') {
 			return
-		}
-		if (this.className == 'active') {
-			return;
 		}
 		var bournIdx = parseInt(this.getAttribute('idx'));
 		var offset = -520 * (bournIdx - curImgIdx);
