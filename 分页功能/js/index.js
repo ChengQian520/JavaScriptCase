@@ -2,7 +2,7 @@
 page({
 	id: 'wrap',
 	curPage: 1,
-	allPage: 10,
+	allPage: 2,
 	callBack: function(curPage, allPage) {
 		var p = document.getElementsByTagName('p')[0];
 		p.innerHTML = '当前页：' + curPage + '，总共页：' + allPage;
@@ -106,9 +106,9 @@ function page(opt) {
 	}
 
 	// 总页码
-	var oA = document.createElement('a');
-	oA.innerHTML = '共' + allPage + '页';
-	obj.appendChild(oA);
+	var oSpan = document.createElement('span');
+	oSpan.innerHTML = '共' + allPage + '页';
+	obj.appendChild(oSpan);
 
 	// 执行回调函数
 	callBack(curPage, allPage);
