@@ -2,7 +2,7 @@
 page({
 	id: 'wrap',
 	curPage: 1,
-	allPage: 2,
+	allPage: 10,
 	callBack: function(curPage, allPage) {
 		var p = document.getElementsByTagName('p')[0];
 		p.innerHTML = '当前页：' + curPage + '，总共页：' + allPage;
