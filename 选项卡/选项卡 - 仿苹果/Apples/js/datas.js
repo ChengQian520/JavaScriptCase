@@ -1,9 +1,9 @@
-var datas = [
+var jsonData = [
 	{
 		title: '照片', 
 		des: '能让你日益庞大的照片图库变得井井有条，并易于查看。还能帮助你美化图像，创作精彩照片。更有 iCloud 照片图库，让你可以将值得长久珍藏的照片和视频保存在云端。',
 		navImg: 'nav_icon_photos_large.png',
-		desImg: 'bia_photos_medium_2x.jpg'
+		desImg: 'bia_photos_medium_2x.jpg',
 	},
 	{
 		title: 'iMovie', 
