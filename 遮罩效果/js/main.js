@@ -10,10 +10,9 @@ let oContentBox = document.getElementById('content-box');
 let sWidth = document.body.clientWidth;
 let sHeight = document.body.clientHeight;
 
+// create mask
 let oMask = document.createElement('div');
-
 oMask.style.cssText = `width: ${sWidth}px; height: ${sHeight}px;`;
-console.log(oMask)
 oMask.className = 'mask';
 
 // events

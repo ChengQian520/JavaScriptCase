@@ -1,1 +1,28 @@
-<!DOCTYPE html><html lang="zh-cn"><head>	<meta charset="UTF-8">	<title>回到顶部</title>	<style type="text/css">			body, div { margin: 0; padding: 0}		.wrap div {width: 300px; height: 250px; margin: 50px auto;}		.wrap div:nth-child(2n) {background-color: orange;}		.wrap div:nth-child(2n+1) {background-color: purple;}		.btn {width: 28px; height: 64px; position: fixed; bottom: 50px; right: 50px; background: url('../images/topcio.png') no-repeat;display: none;}		.btn:hover {background-position: -28px 0;}	</style></head><body><!-- HTML 部分 --><div class="wrap">	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div>	<div></div></div><div class="btn" id="btn"></div><!-- JavaScript 部分 --><script type="text/javascript">var oBtn = document.getElementById('btn');var offset;window.onscroll = function() {	// document.documentElement.scrollTop	// document.body.scrollTop（兼容 chrome）	offset = document.documentElement.scrollTop || document.body.scrollTop;	if (offset > 150) {		oBtn.style.display = 'block';	}else {		oBtn.style.display = 'none';	}}oBtn.onclick = function() {	var timer = setInterval(function() {		var speed = Math.ceil(offset) / 5;		if (offset == 0) {			clearInterval(timer);		}else {			document.documentElement.scrollTop = document.body.scrollTop = (offset - speed);		}	}, 30);}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 回到顶部</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="content-box">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+</div>
+
+<span class="btn" id="backToBtn"></span>
+
+<script type="text/javascript" src="../js/main.js"></script>
+
+</body>
+</html>
