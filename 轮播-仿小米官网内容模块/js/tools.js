@@ -22,6 +22,7 @@ function $(Selector) {
  */
 
 function addElement(parentNode, tagName, attr, text, styles) {
+
     if (!parentNode || !tagName) {
         return undefined;
     }
@@ -53,6 +54,7 @@ function addElement(parentNode, tagName, attr, text, styles) {
 function addClass(el, className) {
     if (!el || !className || (typeof className != 'string') || /^[0-9]/.test(className)) {
         return false;
+
     }else {
         el.classList.add(className);
         return true;

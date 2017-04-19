@@ -50,7 +50,7 @@ body {
     overflow: hidden;
 }
 
-/*内层样式*/
+/*内层列表样式*/
 .item-list {
     height: inherit;
     position: absolute;
@@ -93,11 +93,12 @@ body {
     background-size: cover !important;
     margin:10px auto;
 }
+
+/*小圆点*/
 .idots {
-    width: 100px;
+    width: inherit;
     height: 9px;
     position: absolute;
-    left: 100px;
     bottom: 10px;
     text-align: center;
     display: table;
@@ -110,7 +111,7 @@ body {
     height: 6px;
     background-color: gray;
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 10px;
     border-radius: 40%;
     cursor: pointer;
 }
@@ -120,10 +121,6 @@ body {
     height: 9px;
     border: 2px solid orange;
     background-color: white;
-}
-
-.idots li:hover:not(.idots li.selected) {
-    background-color: orange;
 }
 
 /*按钮*/

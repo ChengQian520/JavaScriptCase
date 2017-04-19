@@ -6,18 +6,24 @@ let datas = jsonData;
 let isAnimating = false;
 let oUl = addElement(oWrap, "ul", {"class":"content-list clearFix"});
 
+// 遍历数数，根据数据条数创建节点
 datas.forEach(function(data, idx) {
+
+    // 1、布局外层节点
     let oLi = addElement(oUl, "li", {"class":"content-item fl"}, "",`border-top: 1px solid ${data["bgcolor"]}; color: ${data["bgcolor"]}`);
     let oCategory = addElement(oLi, "h3", {}, data["category"]);
     let oCarouselWrap = addElement(oLi, "div", {"class": "carousel-wrap"});
+
     let width = data["infos"].length * parseInt(getStyle(oWrap, 'width'));
     let oItemList = addElement(oCarouselWrap, "ul", {"class":"item-list"}, "", `width: ${width}px`);
     let oIdots    = addElement(oCarouselWrap, "ul", {"class":"idots", "idx":0});
 
+    // 2、遍历内层数组数据，布局内层节点
     data["infos"].forEach(function(info, idx){
         let oItemLi = addElement(oItemList, "li");
         addElement(oItemLi, "a", {"class":"title", "href":"javascript:;"}, info["title"]);
         addElement(oItemLi, "a", {"class":"subtitle", "href":"javascript:;"}, info["subTitle"]);
+        // 处理价格显示区域
         let oPrice = addElement(oItemLi, "a", {"class":"price", "href":"javascript:;"}, info["price"]);
         if(idx == data["infos"].length - 1) {
             oPrice.style.cssText = `border:  1px solid ${data["bgcolor"]}; color: ${data["bgcolor"]}; padding: 5px 10px;`;
@@ -30,12 +36,13 @@ datas.forEach(function(data, idx) {
             });
         }
         addElement(oItemLi, "a", {"class":"img", "href":"javascript:;"}, "", `background: url("../imgs/${info["imgName"]}") no-repeat center;`);
+        // 添加小圆点
         let oIdot = addElement(oIdots, "li");
         oIdot.idx = idx;
         addEvent(oIdot, 'click', function () {
             let curIdx = this.parentElement.getAttribute('idx');
             let desIdx = this.idx;
-            let offset = -295 * (desIdx - curIdx);
+            let offset = -parseInt(getStyle(this.parentElement.parentElement, 'width')) * (desIdx - curIdx);
             this.parentElement.setAttribute('idx', desIdx);
             tab(oItemList, offset, this.parentElement);
         });
@@ -75,7 +82,7 @@ function tab(target, offset, idots, flag) {
         idots.setAttribute("idx", curImgIdx.toString());
     }
 
-    let duration = 500;
+    let duration = 300;
     let interval = 15;
     let speed    = Math.ceil(offset / (duration / interval));
     let desOffset = parseInt(getStyle(target, "left")) + offset;
