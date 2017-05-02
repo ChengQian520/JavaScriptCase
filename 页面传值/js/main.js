@@ -11,7 +11,7 @@ console.log(obj);
 
 document.body.innerHTML = `
 		<p>昵称：${obj.nikname}</p>
-		<p>大区：${dobj.area}</p>
+		<p>大区：${obj.area}</p>
 		<p>段位：${obj.level}</p>`;
 
 
